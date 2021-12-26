@@ -1,0 +1,51 @@
+Question -
+Write a blog on Difference between HTTP1.1 vs HTTP2.
+
+Answer -
+                        Javascript                                   |                              NodeJs
+_____________________________________________________________________|_____________________________________________________________________
+=> Javascript is a programming language that is used for writing     |=> NodeJS is a Javascript runtime environment.
+   scripts on the website.                                           |
+=> Javascript can only be run in the browsers.                       |=> We can run Javascript outside the browser with the help of NodeJS.
+                                                                     |
+=> It is basically used on the client-side.                          |=> It is mostly used on the server-side.
+                                                                     |
+=> Javascript is capable enough to add HTML and play with the DOM.   |=> Nodejs does not have capability to add HTML tags.
+                                                                     |
+=> Javascript can run in any browser engine as like JS core in       |=> V8 is the Javascript engine inside of node.js that parses and runs
+   safari and Spidermonkey in Firefox.                               |   Javascript.
+=> Javascript is used in frontend development.                       |=> Nodejs is used for server-side development.
+                                                                     |
+=> Some of the javascript frameworks are RamdaJS, TypedJS, etc.      |=> Some of the Nodejs modules are Lodash, express etc.  
+                                                                     |   These modules are to be imported from npm.
+=> It is the upgraded version of ECMA script that uses Chrome’s V8   |=> Nodejs in written in C,C++ and Javascript.
+   engine written in C++.                                            |
+
+Question -
+Execute the below code and write your description in txt file
+a)typeof(1)
+Answer- number
+
+b)typeof(1.1)
+Answer- number
+
+c)typeof('1.1')
+Answer- string
+
+d)typeof(true)
+Answer- boolean
+
+e)typeof(null)
+Answer- object
+
+f)typeof(undefined)
+Answer- undefined
+
+g)typeof([])
+Answer- object
+
+h)typeof({})
+Answer- object
+
+g)typeof(NaN)
+Answer- number
