@@ -1,0 +1,68 @@
+Question 1 & 2 -
+For the given JSON iterate over all for loops (for, for in, for of, forEach)
+Create your own resume data in JSON format
+
+Answer -
+1) creating a JSON for resume data.
+myResume.JSON-->
+
+{
+ personalDetails: {
+     name: "Mayur Darade",
+     age: 22,
+     email: "mayurdarade99@gmail.com",
+     phone: "(+91) - 90225 637838",
+     location: [
+       "address: Anushaktinagar, BARC Colony", 
+       " postalCode: 400094", 
+       " city: Mumbai", 
+       " state: Maharashtra", 
+       " country: India"
+    ]},
+   education: {
+       institution: "K.K. Wagh Institute of Engineering Education and Research",
+       degreeName: "Bachelor's of Engineering",
+       degreeBranch: "Electrical Engineering",
+       duration: "2016-2021",
+       cgpa: 7.39
+    },
+   skills: {
+       name: "Programming Languages",
+       level: "Intermediate",
+       languages: [
+        "C","C++","Python","Javascript"
+      ]
+    }
+}
+
+2) now lets display this data using for, for of, for in and for each loops.
+
+a) for in loop
+=> for (var index in myResume.personalDetails) {
+    console.log(`${index}: ${myResume.personalDetails[index]}`);
+   }  
+
+   for (var index in myResume.education) {
+    console.log(`${index}: ${myResume.education[index]}`);
+   }  
+
+   for (var index in myResume.skills) {
+    console.log(`${index}: ${myResume.skills[index]}`);
+   } 
+
+b) for each loop
+=> const key1 = Object.keys(myResume.personalDetails);
+   const key2 = Object.keys(myResume.education);
+   const key3 = Object.keys(myResume.skills);
+
+   key1.forEach((key, index) => {
+    console.log(`${key}: ${myResume.personalDetails[key]}`);
+   }); 
+
+   key2.forEach((key, index) => {
+    console.log(`${key}: ${myResume.education[key]}`);
+   });
+
+   key3.forEach((key, index) => {
+    console.log(`${key}: ${myResume.skills[key]}`);
+   });
