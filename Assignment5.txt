@@ -171,6 +171,7 @@ let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
         temp=str;
         temp=temp.split("");
         reverse=temp.reverse().join("");
+        str=Number(str);
         if (reverse==str){
             newarr.push(str);
         }
@@ -178,7 +179,7 @@ let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
     console.log(newarr);
 })(numbers);
 
-Output => [ '66', '202', '717' ]
+Output => [ 66, 202, 717 ]
 
 f) Return median of two sorted arrays of the same size
 
@@ -278,7 +279,7 @@ rotateByKtimes(numbers,k);
 
 // program to Rotate an array k times with IIFE
 
-let numbers=[21,32,43,51,25]//,78,92,46,35,67];
+let numbers=[21,32,43,51,25];
 let k=2;
 (function (arr,n){
     let i,j,newarr=[];
@@ -293,7 +294,7 @@ let k=2;
 })
 (numbers,k);
 
- Output => [ 43, 51, 25, 21, 32];
+ Output => [ 43, 51, 25, 21, 32 ];
 
 Question -
 Do the below programs in anonymous function & IIFE
@@ -363,3 +364,5 @@ e) Return all the palindromes in an array
 let numbers=[123,66,301,202,717,456,567];
 const getPalindrome = arr => arr. filter(value => String(value).split("").reverse().join("")==value);
 console.log(getPalindrome(numbers));
+
+Output => [ 66, 202, 717 ]
