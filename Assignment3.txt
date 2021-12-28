@@ -66,3 +66,50 @@ b) for each loop
    key3.forEach((key, index) => {
     console.log(`${key}: ${myResume.skills[key]}`);
    });
+   
+Since es6 doesn't support iteration over object with normal for and for of loops, 
+we have to store the objects of the json data inside an array then the iteration will be done over an array.
+
+so,
+let myResumeArray=[personalDetails: {
+     name: "Mayur Darade",
+     age: 22,
+     email: "xyz@abcxyz.pqr",
+     phone: "(+91) - 11223 34455",
+     location: [
+       "address: Anushaktinagar, BARC Colony", 
+       " postalCode: 400094", 
+       " city: Mumbai", 
+       " state: Maharashtra", 
+       " country: India"
+    ]},
+   education: {
+       institution: "K.K. Wagh Institute of Engineering Education and Research",
+       degreeName: "Bachelor's of Engineering",
+       degreeBranch: "Electrical Engineering",
+       duration: "2016-2021",
+       cgpa: 7.39
+    },
+   skills: {
+       name: "Programming Languages",
+       level: "Intermediate",
+       languages: [
+        "C","C++","Python","Javascript"
+      ]
+    }
+];
+ 
+now there are three elements (myResumeArray[0]=personalDetails{...},myResumeArray[1]=education{...},myResumeArray[2]=skills{...}) inside the array,
+so we can do the iteration using for and for of loops.
+
+c) for loop
+
+for (let i=0; i<myResumeArray.length; i++){
+console.log(`${i}:${myResumeArray[i]}`);
+}
+
+d) for of loop
+
+for (value of myResumeArray){
+console.log(`${indexOf(value)}:${value}`);
+}
