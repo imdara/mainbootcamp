@@ -1,0 +1,365 @@
+Question -
+Do the below programs in anonymous function & IIFE
+a) Print odd numbers in an array
+b) Convert all the strings to title caps in a string array
+c) Sum of all numbers in an array
+d) Return all the prime numbers in an array
+e) Return all the palindromes in an array
+f) Return median of two sorted arrays of same size
+g) Remove duplicates from an array
+h) Rotate an array by k times
+
+Answer/Code-
+a) print odd numbers in an array
+
+// program to print odd numbers in an array with anonymous function
+
+let numbers=[21,32,43,51,25,78,92,46,35,67];//defining an array of numbers
+//function starts here
+let getOddNumbers=function (arr){
+let odd=[];
+for (let i=0; i<arr.length; i++){
+if (arr[i]%2!=0)
+odd.push(arr[i])
+}
+console.log(odd);
+}
+getOddNumbers(numbers);
+
+// program to print odd numbers in an array with IIFE
+
+let numbers=[21,32,43,51,25,78,92,46,35,67];//defining an array of numbers
+//function starts here
+(function (arr){
+let odd=[];
+for (let i=0; i<arr.length; i++){
+if (arr[i]%2!=0)
+odd.push(arr[i]);
+}
+console.log(odd);
+})(numbers);
+
+Output=> [21, 43, 51, 25, 35, 67]
+
+b) Convert all the strings to title caps in a string array
+
+// program to convert all the strings to title caps in a string array with anonymous function
+
+(function (str) {
+    let word,result;
+    word=str.toLowerCase();
+    result=word.charAt(0).toUpperCase()+word.slice(1);
+    console.log(result);
+})
+("ImAProgrammingLanguage");
+
+// program to convert all the strings to title caps in a string array with IIFE
+
+let getTitleCaps=function (str) {
+    let word,result;
+    word=str.toLowerCase();
+    result=word.charAt(0).toUpperCase()+word.slice(1);
+    console.log(result);
+}
+getTitleCaps("ImAProgrammingLanguage");
+
+Output => Imaprogramminglanguage
+
+c) print sum of all the numbers in an array
+
+// program to print sum of all the numbers in an array with anonymous function
+
+let numbers=[21,32,43,51,25,78,92,46,35,67];
+let getSum=function (arr){
+let sum=0;
+for (let i=0; i<arr.length; i++){
+sum=sum+arr[i];
+}
+console.log(sum);
+}
+getSum(numbers);
+
+// program to print sum of all the numbers in an array with IIFE
+
+let numbers=[21,32,43,51,25,78,92,46,35,67];
+(function (arr){
+let sum=0;
+for (let i=0; i<arr.length; i++){
+sum=sum+arr[i];
+}
+console.log(sum);
+})(numbers);
+
+Output=> 490
+
+d) Return all the prime numbers in an array
+
+// program to return prime numbers in an array with anonymous function
+
+let numbers=[21,32,43,51,25,78,92,46,35,67]; //defining an array of numbers
+// function starts here
+let returnPrime=function (arr){
+    let i,j,newarr=[];
+    for (i=0; i<arr.length; i++)
+    { 
+        for (j=2; j<arr[i]; j++){
+            if (arr[i]%j==0)
+            {
+            break;
+            }
+        }
+        if (j==arr[i])
+        {
+            newarr.push(arr[i]);
+        }        
+    }
+    console.log(newarr);
+}
+returnPrime(numbers);
+
+// program to return prime numbers in an array with IIFE
+let numbers=[21,32,43,51,25,78,92,46,35,67]; // defining an array of numbers
+// function starts here
+(function(arr){
+    let i,j,newarr=[];
+    for (i=0; i<arr.length; i++)
+    { 
+        for (j=2; j<arr[i]; j++){
+            if (arr[i]%j==0)
+            {
+            break;
+            }
+        }
+        if (j==arr[i])
+        {
+            newarr.push(arr[i]);
+        }        
+    }
+    console.log(newarr);
+})(numbers);
+
+Output=> [43,67]
+
+e) Return all the palindromes in an array
+
+// program to return palindromes in an array with anonymous function
+
+let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
+//function starts here
+let returnPalindrome = function(arr){
+    let i,str,temp,reverse,newarr=[];
+    for (i=0; i<arr.length; i++){
+        str=String(arr[i]);
+        temp=str;
+        temp=temp.split("");
+        reverse=temp.reverse().join("");
+        if (reverse==str){
+            newarr.push(str);
+        }
+    }
+    console.log(newarr);
+}
+returnPalindrome(numbers);
+// program to return palindromes in an array with IIFE
+
+let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
+//function starts here
+(function(arr){
+    let i,str,temp,reverse,newarr=[];
+    for (i=0; i<arr.length; i++){
+        str=String(arr[i]);
+        temp=str;
+        temp=temp.split("");
+        reverse=temp.reverse().join("");
+        if (reverse==str){
+            newarr.push(str);
+        }
+    }
+    console.log(newarr);
+})(numbers);
+
+Output => [ '66', '202', '717' ]
+
+f) Return median of two sorted arrays of the same size
+
+// program to return median of two sorted arrays of the same size with anonymous function
+
+let numbers1=[21,32,43,51,25,78,92,46,35,67];
+let numbers2=[15,16,42,59,73,10,20,40,30,50];
+let returnMedian=function (arr1,arr2){
+    let i,newarr=[],median;
+    newarr=[...arr1,...arr2];
+    newarr.sort((a,b) => a-b);
+    i=parseInt(arr1.length);
+    median=(newarr[i]+newarr[i+1])/2;
+    console.log(median);
+}
+returnMedian(numbers1,numbers2);
+
+// program to return median of two sorted arrays of the same size with IIFE
+
+let numbers1=[21,32,43,51,25,78,92,46,35,67];
+let numbers2=[15,16,42,59,73,10,20,40,30,50];
+(function (arr1,arr2){
+    let i,newarr=[],median;
+    newarr=[...arr1,...arr2];
+    newarr.sort((a,b) => a-b);
+    i=parseInt(arr1.length);
+    median=(newarr[i]+newarr[i+1])/2;
+    console.log(median);
+})
+(numbers1,numbers2);
+
+Output=> 42.5
+
+g) Remove duplicates from an array
+
+// program to remove duplicates from an array with anonymous function
+
+let characters=['a','r','i','t','h','m','e','t','i','c'];//defining an array of characters
+//function starts here
+let removeDuplicates=function (arr){
+    let i,j,newarr=[];
+    for (i=0; i<arr.length; i++){
+    for (j=0; j<arr.length; j++){
+    if (arr[i]==arr[j] && i!=j){
+    break;
+    }
+    }
+    if (j==arr.length){
+    newarr.push(arr[i]);
+    }
+    }
+    console.log(newarr);
+    }
+    removeDuplicates(characters);
+
+// program to remove duplicates from an array with IIFE
+
+let characters=['a','r','i','t','h','m','e','t','i','c'];//defining an array of characters
+//function starts here
+(function (arr){
+    let i,j,newarr=[];
+    for (i=0; i<arr.length; i++){
+    for (j=0; j<arr.length; j++){
+    if (arr[i]==arr[j] && i!=j){
+    break;
+    }
+    }
+    if (j==arr.length){
+    newarr.push(arr[i]);
+    }
+    }
+    console.log(newarr);
+    })
+    (characters);
+
+Output => [ 'a', 'r', 'h', 'm', 'e', 'c' ]
+
+h) Rotate an array k times
+
+// program to Rotate an array k times with anonymous function
+
+let numbers=[21,32,43,51,25];
+let k=2;
+let rotateByKtimes=function (arr,n){
+    let i,j,newarr=[];
+    for (i=0;i<arr.length;i++){
+        if(i>n)
+        j=i-n-1;
+        else
+        j=arr.length+i-n-1;
+        newarr.push(arr[j]);
+    }
+    console.log(newarr);
+}
+rotateByKtimes(numbers,k);
+
+
+// program to Rotate an array k times with IIFE
+
+let numbers=[21,32,43,51,25]//,78,92,46,35,67];
+let k=2;
+(function (arr,n){
+    let i,j,newarr=[];
+    for (i=0;i<arr.length;i++){
+        if(i>n)
+        j=i-n-1;
+        else
+        j=arr.length+i-n-1;
+        newarr.push(arr[j]);
+    }
+    console.log(newarr);
+})
+(numbers,k);
+
+ Output => [ 43, 51, 25, 21, 32];
+
+Question -
+Do the below programs in anonymous function & IIFE
+a) Print odd numbers in an array
+b) Convert all the strings to title caps in a string array
+c) Sum of all numbers in an array
+d) Return all the prime numbers in an array
+e) Return all the palindromes in an array
+
+Code/Answer -
+
+a) Print odd numbers in an array
+
+let numbers=[11,12,13,14,15,16];
+const odd = arr => arr. filter(value => value%2!=0);
+console.log(odd(numbers));
+
+Output => [ 11, 13, 15 ]
+
+b) Convert all the strings to title caps in a string array
+
+const titleCaps = str => { 
+        let letters,result;
+        letters=str.toLowerCase();
+        result=letters.charAt(0).toUpperCase()+letters.slice(1);
+        console.log(result);
+    };
+    titleCaps("ImAProgrammingLanguage");
+
+Output => Imaprogramminglanguage
+
+c) Sum of all numbers in an array
+
+let numbers = [6,8,2,5,9,12,18,3];
+const sumOfNumbers = num => {
+    let sum=0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum+=num[i];
+    }
+    return sum;
+  };
+  console.log(sumOfNumbers(numbers));
+
+Output => 63
+
+d) Return all the prime numbers in an array
+
+let numbers = [6,8,2,5,7,9,12,18,3];
+const getPrimeNumbers = arr => {
+    let i,prime=[]
+    for (value of arr){
+        for (i=2; i<value; i++){
+            if (value%i==0)
+            break;
+        }
+        if(i==value)
+        prime.push(value);
+    }
+    console.log(prime);
+} 
+getPrimeNumbers(numbers);
+
+Output => [ 2, 5, 7, 3 ]
+
+e) Return all the palindromes in an array
+
+let numbers=[123,66,301,202,717,456,567];
+const getPalindrome = arr => arr. filter(value => String(value).split("").reverse().join("")==value);
+console.log(getPalindrome(numbers));
