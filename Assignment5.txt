@@ -150,7 +150,7 @@ e) Return all the palindromes in an array
 
 // program to return palindromes in an array with anonymous function
 
-let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
+let data=["abba",112,66,"apple",301,707,"madam"];
 //function starts here
 let returnPalindrome = function(arr){
     let i,str,temp,reverse,newarr=[];
@@ -165,10 +165,11 @@ let returnPalindrome = function(arr){
     }
     console.log(newarr);
 }
-returnPalindrome(numbers);
+returnPalindrome(data);
+
 // program to return palindromes in an array with IIFE
 
-let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
+let data=["abba",112,66,"apple",301,707,"madam"];
 //function starts here
 (function(arr){
     let i,str,temp,reverse,newarr=[];
@@ -177,15 +178,14 @@ let numbers=[123,66,301,202,717,456,567];//defining an array of numbers
         temp=str;
         temp=temp.split("");
         reverse=temp.reverse().join("");
-        str=Number(str);
         if (reverse==str){
             newarr.push(str);
         }
     }
     console.log(newarr);
-})(numbers);
+})(data);
 
-Output => [ 66, 202, 717 ]
+Output => [ 'abba', '66', '707', 'madam' ]
 
 f) Return median of two sorted arrays of the same size
 
