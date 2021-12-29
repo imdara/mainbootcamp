@@ -317,6 +317,7 @@ const odd = arr => {
     }
     console.log(odd);
     };
+odd(numbers);
 
 Output => [ 11, 13, 15 ]
 
@@ -340,9 +341,9 @@ const sumOfNumbers = num => {
     for (let i = 0; i < numbers.length; i++) {
       sum+=num[i];
     }
-    return sum;
+    console.log(sum);
   };
-  console.log(sumOfNumbers(numbers));
+  sumOfNumbers(numbers);
 
 Output => 63
 
