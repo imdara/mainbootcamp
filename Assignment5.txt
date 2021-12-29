@@ -309,8 +309,14 @@ Code/Answer -
 a) Print odd numbers in an array
 
 let numbers=[11,12,13,14,15,16];
-const odd = arr => arr. filter(value => value%2!=0);
-console.log(odd(numbers));
+const odd = arr => {
+    let odd=[];
+    for (let i=0; i<arr.length; i++){
+    if (arr[i]%2!=0)
+    odd.push(arr[i])
+    }
+    console.log(odd);
+    };
 
 Output => [ 11, 13, 15 ]
 
