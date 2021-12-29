@@ -45,25 +45,31 @@ b) Convert all the strings to title caps in a string array
 
 // program to convert all the strings to title caps in a string array with anonymous function
 
-(function (str) {
-    let word,result;
-    word=str.toLowerCase();
-    result=word.charAt(0).toUpperCase()+word.slice(1);
-    console.log(result);
-})
-("ImAProgrammingLanguage");
+let getTitleCase=function(str) { 
+    let letters,result="";
+    str=str.split(" ");
+    for (let i=0; i<str.length; i++){
+    letters=str[i].toLowerCase();
+    result=result+" "+letters.charAt(0).toUpperCase()+letters.slice(1)+" ";
+    }
+    console.log(result.trim());
+}
+getTitleCase("HelLo uSer");
 
 // program to convert all the strings to title caps in a string array with IIFE
 
-let getTitleCaps=function (str) {
-    let word,result;
-    word=str.toLowerCase();
-    result=word.charAt(0).toUpperCase()+word.slice(1);
-    console.log(result);
-}
-getTitleCaps("ImAProgrammingLanguage");
+(function(str) { 
+    let letters,result="";
+    str=str.split(" ");
+    for (let i=0; i<str.length; i++){
+    letters=str[i].toLowerCase();
+    result=result+" "+letters.charAt(0).toUpperCase()+letters.slice(1)+" ";
+    }
+    console.log(result.trim());
+})
+("HelLo uSer");
 
-Output => Imaprogramminglanguage
+Output => Hello User
 
 c) print sum of all the numbers in an array
 
