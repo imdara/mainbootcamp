@@ -153,17 +153,14 @@ e) Return all the palindromes in an array
 let data=["abba",112,66,"apple",301,707,"madam"];
 //function starts here
 let returnPalindrome = function(arr){
-    let i,str,temp,reverse,newarr=[];
-    for (i=0; i<arr.length; i++){
-        str=String(arr[i]);
-        temp=str;
-        temp=temp.split("");
-        reverse=temp.reverse().join("");
-        if (reverse==str){
-            newarr.push(str);
+    let reverse,newarr=[];
+    for (value of arr){
+        reverse=String(value).split("").reverse().join("");
+        if (reverse==value){
+            newarr.push(value);
         }
     }
-    console.log(newarr);
+    console.log(newarr);;
 }
 returnPalindrome(data);
 
@@ -172,20 +169,17 @@ returnPalindrome(data);
 let data=["abba",112,66,"apple",301,707,"madam"];
 //function starts here
 (function(arr){
-    let i,str,temp,reverse,newarr=[];
-    for (i=0; i<arr.length; i++){
-        str=String(arr[i]);
-        temp=str;
-        temp=temp.split("");
-        reverse=temp.reverse().join("");
-        if (reverse==str){
-            newarr.push(str);
+    let reverse,newarr=[];
+    for (value of arr){
+        reverse=String(value).split("").reverse().join("");
+        if (reverse==value){
+            newarr.push(value);
         }
     }
     console.log(newarr);
 })(data);
 
-Output => [ 'abba', '66', '707', 'madam' ]
+Output => [ 'abba', 66, 707, 'madam' ]
 
 f) Return median of two sorted arrays of the same size
 
@@ -367,8 +361,18 @@ Output => [ 2, 5, 7, 3 ]
 
 e) Return all the palindromes in an array
 
-let numbers=[123,66,301,202,717,456,567];
-const getPalindrome = arr => arr. filter(value => String(value).split("").reverse().join("")==value);
-console.log(getPalindrome(numbers));
+let data=["abba",112,66,"apple",301,707,"madam"];
+//function starts here
+let getPalindrome = (arr) => {
+    let reverse,newarr=[];
+    for (value of arr){
+        reverse=String(value).split("").reverse().join("");
+        if (reverse==value){
+            newarr.push(value);
+        }
+    }
+    console.log(newarr);
+};
+getPalindrome(data);
 
-Output => [ 66, 202, 717 ]
+Output => [ 'abba', 66, 707, 'madam' ]
