@@ -259,7 +259,7 @@ Output => [ 'a', 'r', 'h', 'm', 'e', 'c' ]
 
 h) Rotate an array k times
 
-// program to Rotate an array k times with anonymous function
+// program to Rotate an array k times to the left with anonymous function
 
 let numbers=[21,32,43,51,25];
 let k=2;
@@ -277,7 +277,7 @@ let rotateByKtimes=function (arr,n){
 rotateByKtimes(numbers,k);
 
 
-// program to Rotate an array k times with IIFE
+// program to Rotate an array k times to the left with IIFE
 
 let numbers=[21,32,43,51,25];
 let k=2;
