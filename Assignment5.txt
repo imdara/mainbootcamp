@@ -266,10 +266,10 @@ let k=2;
 let rotateByKtimes=function (arr,n){
     let i,j,newarr=[];
     for (i=0;i<arr.length;i++){
-        if(i>n)
-        j=i-n-1;
+        if(i+n>arr.length-1)
+        j=i+n-arr.length;
         else
-        j=arr.length+i-n-1;
+        j=i+n;
         newarr.push(arr[j]);
     }
     console.log(newarr);
@@ -284,10 +284,10 @@ let k=2;
 (function (arr,n){
     let i,j,newarr=[];
     for (i=0;i<arr.length;i++){
-        if(i>n)
-        j=i-n-1;
+        if(i+n>arr.length-1)
+        j=i+n-arr.length;
         else
-        j=arr.length+i-n-1;
+        j=i+n;
         newarr.push(arr[j]);
     }
     console.log(newarr);
