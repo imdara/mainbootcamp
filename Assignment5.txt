@@ -217,45 +217,33 @@ g) Remove duplicates from an array
 
 // program to remove duplicates from an array with anonymous function
 
-let characters=['a','r','i','t','h','m','e','t','i','c'];//defining an array of characters
 //function starts here
-let removeDuplicates=function (arr){
-    let i,j,newarr=[];
-    for (i=0; i<arr.length; i++){
-    for (j=0; j<arr.length; j++){
-    if (arr[i]==arr[j] && i!=j){
-    break;
+let removeDuplicates=function (arr,n){
+    for (let i=0; i<arr.length; i++){
+        for (let j=0; j<arr.length; j++){
+            if (arr[i]==arr[j] && i!=j)
+            arr.pop(arr[j]);
+        }
     }
-    }
-    if (j==arr.length){
-    newarr.push(arr[i]);
-    }
-    }
-    console.log(newarr);
-    }
-    removeDuplicates(characters);
+    console.log(arr);
+}
+removeDuplicates(["type","sort","kind","type","kind"]);
 
 // program to remove duplicates from an array with IIFE
 
-let characters=['a','r','i','t','h','m','e','t','i','c'];//defining an array of characters
 //function starts here
 (function (arr){
-    let i,j,newarr=[];
-    for (i=0; i<arr.length; i++){
-    for (j=0; j<arr.length; j++){
-    if (arr[i]==arr[j] && i!=j){
-    break;
+    for (let i=0; i<arr.length; i++){
+        for (let j=0; j<arr.length; j++){
+            if (arr[i]==arr[j] && i!=j)
+            arr.pop(arr[j]);
+        }
     }
-    }
-    if (j==arr.length){
-    newarr.push(arr[i]);
-    }
-    }
-    console.log(newarr);
+    console.log(arr);
     })
-    (characters);
+    (["type","sort","kind","type","kind"]);
 
-Output => [ 'a', 'r', 'h', 'm', 'e', 'c' ]
+Output => [ 'type', 'sort', 'kind' ]
 
 h) Rotate an array k times
 
