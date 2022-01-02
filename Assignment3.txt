@@ -9,9 +9,9 @@ myResume.JSON-->
 {
  personalDetails: {
      name: "Mayur Darade",
-     age: 22,
-     email: "mayurdarade99@gmail.com",
-     phone: "(+91) - 90225 637838",
+     age: 19,
+     email: "xyz@abcxyz.pqr",
+     phone: "(+91) - 11223 34455",
      location: [
        "address: Anushaktinagar, BARC Colony", 
        " postalCode: 400094", 
@@ -73,7 +73,7 @@ we have to store the objects of the json data inside an array then the iteration
 so,
 let myResumeArray=[personalDetails: {
      name: "Mayur Darade",
-     age: 22,
+     age: 19,
      email: "xyz@abcxyz.pqr",
      phone: "(+91) - 11223 34455",
      location: [
