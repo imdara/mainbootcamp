@@ -144,10 +144,10 @@ class Uber{
      let bookingCharge=60,fare,perkm=12;
        fare=bookingCharge+this.distance*perkm;
        console.log(`
-       Pickup point:${this.start}
-       Destination:${this.stop}
-       Distance:${this.distance}
-       Fare:${fare}`);
+       Pickup point: ${this.start}
+       Destination: ${this.stop}
+       Distance: ${this.distance}
+       Fare: Rs. ${fare}`);
  }
 }
  let ride=new Uber();
@@ -159,12 +159,12 @@ class Uber{
 
 //   Output =>
 
-//   Pickup point:Borivili
-//   Destination:Matunga
-//   Distance:22
-//   Fare:324
+// Pickup point: Borivili
+// Destination: Matunga
+// Distance: 22
+// Fare: Rs. 324
 
-//   Pickup point:Chembur
-//   Destination:Malad
-//   Distance:21
-//   Fare:312
+// Pickup point: Chembur
+// Destination: Malad
+// Distance: 21
+// Fare: Rs. 312
