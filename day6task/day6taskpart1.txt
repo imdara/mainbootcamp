@@ -1,0 +1,338 @@
+Question - 
+Find the culprit and nail it , Javascript Debugging.
+Fix the following codes:
+a) //code starts here
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert( “I’m JavaScript!’);
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+//code ends here
+Answer -
+Error: alert( “I’m JavaScript!’);
+Correction: alert( `I’m JavaScript!`);
+
+b) //code starts here
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+scripts.js-->
+alert(“I’m invoked!”);
+//code ends here
+Answer -
+Error: alert(“I’m invoked!”)
+Correction: alert(`I’m invoked!`)
+
+c) //code starts here
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js -->
+alert("I'm JavaScript!");
+alert('Hello') // this line is not having semicolon
+alert(`Wor
+ ld`)
+alert(3 +
+1
++ 2); // this is multiple line code and its working
+//code ends here
+Answer -
+Error: There is no error
+Explanation: This works because of backticks(`). If single or double quotes were used in place of backticks it wouldn't have worked.
+
+d) Fix the below to alert Guvi geek
+//code starts here
+fix.html-->
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js-->
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+lname;
+alert( admin ); // "Guvi geek"
+
+//code ends here
+Answer -
+Error: admin = fname+lname;
+Correction1: admin = `${fname} ${lname}`;
+Correction2: admin = fname+" "+lname;
+
+e) Fix the below to alert Hello Guvi geek
+//code starts here
+fix.html-->
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js-->
+let fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname+lname;
+alert( 'hello ${name}' );
+//code ends here
+Answer - 
+Error: name = fname+lname;
+Correction1: name = `${fname} ${lname}`;
+Correction2: name = fname+" "+lname;
+
+//since the fix.html file is common for all questions from here onwards code will only consists of script.js file
+
+f) //code starts here
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(a + b);
+//code ends here
+Answer -
+Error: alert(a + b);
+Correction: alert(+a + +b);
+
+g) //code starts here
+var a = "2" > "12";
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted")
+}
+else
+{
+  console.log("Diffused") 
+}
+//code ends here
+Answer -
+Error: var a = "2" > "12";
+Correction: var a = 2 > 12;
+
+h) //code starts here
+let a = prompt("Enter a number?");
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+//code ends here
+Answer -
+Error: let a = prompt("Enter a number?");
+Correction: let a = Number(prompt("Enter a number?"));
+
+i) //code starts here
+let value = prompt('How many runs you scored in this ball');
+if (value === 4) {
+      console.log("You hit a Four");
+} else if (value === 6) {
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+//code ends here
+Answer -
+Error: ===
+Correction: replace "===" by "==" because "==" automatically typecasts the data into a number and in the case of "===" string "4" is being 
+compared with the number 4 thats why it doesn't work.
+
+j) //code starts here
+let login = 'Employee';
+let message = (login == 'Employee') ? :
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+//code ends here
+Answer -
+Error: let message = (login == 'Employee') ? : (login == 'Director') ? 'Greetings' : (login == '') ? 'No login' : '';
+Correction: let message = (login == 'Employee') ? 'Welcome Employee' : (login == 'Director') ? 'Greetings' : (login == '') ? 'No login' : '';
+
+k) //code starts here
+// You cant change the value of the msg
+let message;
+if (null || 2 || undefined )
+{
+ let message = "welcome boss";
+}
+else
+{
+ let message = "Go away";
+}
+  console.log(message);
+//code ends here
+Answer -
+Error: 'let'
+Correction: use 'var' instead of 'let' because 'let' doesn't let you redeclare variables.
+
+l) //code starts here
+let message;
+let lock = 2;
+//Dont change any code below this 
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+  console.log(message);
+//code ends here
+Answer -
+Error: let lock = 2;
+Correction: lock cannot be assigned a value that is neither null nor undefined so replacing 2 by null or undefined will solve the problem
+
+m) //code starts here
+let message;
+let lock = 2;
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+//code ends here
+Answer -
+Error: let lock = 2;
+Correction: let lock = undefined;
+
+n) //code starts here
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log( --i );
+}
+//code ends here
+Answer -
+Error: --i (the predecrement operator first decrements i and then prints it so the output starts from 2)
+Correction: i-- (the postdecrement operator first prints i and then decrements it so the output starts from 3)
+
+o) //code starts here
+//Change the code to print 1 to 10 in 4 lines
+let num = 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+//code ends here
+Answer -
+//code starts here
+let num=1;
+while (num<=10){
+  console.log(num++);
+}
+//code ends here
+
+p)//Change the code to print even nos.
+//You are allowed to modify only one character 
+for (let num = 2; num <= 20; num += 1) {
+  console.log(num)
+}
+
+Answer -
+//Change - just replace 1 by 2 
+for (let num = 2; num <= 20; num += 2) {
+  console.log(num)
+}
+
+q)//Change the code to print all gifts
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log('Wrapped ${'gifts[i]'} and added a bow!');
+}
+Answer -
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+
+r)//fix the code to disarm the bomb
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+Answer -
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(++countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+s)//Whats the msg printed and why?
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+Answer -
+output =>
+hi
+explanation =>
+in the case of lemein variable 0 is stored as a string since its enclosed within double quotes ("").
+but in the case of lemeout variable 0 is treated as a boolean value since boolean values are binary i.e. 0 and 1, where true = 1, and false = 0.
+so if the condition inside the if loop is just 0 (not in string format) then if (0) translates to if (false) that means the condition is hardcoded false
+so it won't execute whatever is inside.
+
+t)//Whats the msg printed and why? Guess your answer before running it
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+Answer -
+output =>
+hi
+explanation =>
+in the case of lemein variable 0 is stored as a string since its enclosed within double quotes ("").
+but in the case of lemeout variable 0 is treated as a boolean value since boolean values are binary i.e. 0 and 1, where true = 1, and false = 0.
+so if the condition inside the if loop is just 0 (not in string format) then if (0) translates to if (false) that means the condition is hardcoded false
+so it won't execute whatever is inside.
