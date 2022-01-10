@@ -316,9 +316,9 @@ var s=as.reduce((a,c)=>{
  else{
  return a;
  }
- });
+ },0)
 console.log(s);
-//Output: 17
+//Output: 6
 
 n)//fix the code to swap the odd and even digits
 aa = data=>{
