@@ -162,30 +162,195 @@ k = arr.length % k;
  console.log(out);})(arr);
 //Output: [ 6, 8, 6, 1, 9, 10, 12, 13, 1, 2, 3 ]
 
-h)//
+h)//fix the code to gen titlecaps
+var arr = [“guvi”, “geek”, “zen”, “fullstack”];
+var ano = function(arro) {
+ for (var i = 0; i <= arro.length; i++) {
+ console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+ }
+}
+ano();
 
 Answer -
+var arr = ['guvi', 'geek', 'zen', 'fullstack'];
+var ano = function(arro) {
+ for (var i = 0; i < arro.length; i++) {
+ console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+ }
+}
+ano(arr);
 
-i)//
+// Output: Guvi
+// Geek
+// Zen
+// Fullstack
+
+i)//print all the odd numbers using IIFE
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ if (arr[i] % 2 === 0) {
+ console.log(arr[i]);
+ }}
+})();
 
 Answer -
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ if (arr[i] % 2 != 0) {
+ console.log(arr[i]);
+ }}
+})();
 
-j)//
+//Output: [ 1, 3, 5, 7, 79, 7, 9 ] 
+
+j)//fix the code to reverse
+(function(str){
+ str1 = str.split(“ “).reverse().join(“”);
+ console.log(str1); 
+})(“abcd”)
+Answer -
+(function(str){
+ let str1 = str.split("").reverse().join("");
+ console.log(str1); 
+})
+("abcd");
+
+//Output: dcba
+
+k)//fix the code to remove duplicates
+var res = function(arr){
+ for(var i=0; i < arr.length; i++){
+ newArr = [];
+ if(newArr.indexOf(arr[i]) == -1) {
+ newArr.push(arr[i]);
+ } }
+ console.log(newArr)
+}
+res([“guvi”,”geek”,”guvi”,”duplicate”,”geeK”])
 
 Answer -
+var res = function(arr){
+ let newArr = [];
+ for(var i=0; i < arr.length; i++){
+ if(arr.indexOf(arr[i]) === i) {
+ newArr.push(arr[i]);
+ } 
+ }
+ console.log(newArr);
+}
+res(["guvi", "geek", "guvi", "duplicate", "geeK" ])
 
-k)//
+//Output: ["guvi", "geek", "duplicate", "geeK"]
+
+l)//Fix the code to give the below output:
+Expected Output:
+[
+{firstName: “Vasanth”, lastName: “Raja”, age: 24, role: “JSWizard”},
+{firstName: “Sri”, lastName: “Devi”, age: 28, role: “Coder”}
+]
+//Code starts here
+var array =[[[“firstname”,”vasanth”],[“lastname”,”Raje”],[“age”,24],[“role”,”JSWizard”]],[[“firstname”,”Sri”],[“lastname”,”Devi”],[“age”,28],[“role”, “Coder”]]];
+var final=[]
+while(array.length!=0)
+{
+ var outer_remove = array.shift();
+ 
+ while(outer_remove.length!=0)
+ {
+ var inner_remove = outer_remove.shift()
+ var key = inner_remove[0]
+ var value =inner_remove[1]
+ new_object[key]=value
+ }
+ final.push(new_object)
+}
 
 Answer -
+var array =[[["firstname","vasanth"],["lastname","raje"],["age",24],["role","JS Wizard"]],[["firstname","sri"],["lastname","devi"],["age",28],["role", "Coder"]]];
+var final=[];
+while(array.length!=0)
+{
+ var outer_remove = array.shift();
+ var new_object={};
+ while(outer_remove.length!=0)
+ {
+ var inner_remove = outer_remove.shift()
+ var key = inner_remove[0];
+ var value = inner_remove[1];
+ new_object[key]=value;
+ }
+ final.push(new_object);
+}
+console.log(final);
 
-l)//
+//Output: [{
+  age: 24,
+  firstname: "vasanth",
+  lastname: "raje",
+  role: "JS Wizard"
+}, {
+  age: 28,
+  firstname: "sri",
+  lastname: "devi",
+  role: "Coder"
+}]
+
+m)//fix the code to give sum of odd numbers in an array
+var as=[12,34,5,6,2,56,6,2,1];
+var s=as.reduce(function(a,c){
+ if(c%2!=0)
+ {
+ return a+c;
+ }
+ return a;});
+console.log(s);
 
 Answer -
+var as=[12,34,5,6,2,56,6,2,1];
+var s=as.reduce((a,c)=>{
+ if(c%2!=0){
+ return a+c;
+ }
+ else{
+ return a;
+ }
+ });
+console.log(s);
+//Output: 17
 
-m)//
+n)//fix the code to swap the odd and even digits
+aa = data=>{
+ var a=data;
+for(i=0;i<a.length-1;i++){
+ var l=’’;
+ var s=a[i+1]
+ var b=a[i]
+ l+=s
+ l+=b
+ i=i+1
+}
+if((a.length%2)!=0){
+ l+=a[a.length-1]
+}
+console.log(l);
+}
+aa(“1234”);
+
 Answer -
+aa = data=>{
+ var a=data.split("");
+ var l='';
+for(i=0;i<a.length-1;i++){
+ var s=a[i+1]
+ var b=a[i]
+ l=b+l
+ l=s+l
+ i=i+1
+}
+console.log(l);
+}
+aa('1234');
 
-n)//
-
-Answer -
-
+//Output: 4321
